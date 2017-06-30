@@ -1,0 +1,5 @@
+#docker build(创建docker镜像)忽略清单(默认会上传当前目录所有文档)
+#忽略所有文件
+node_modules*
+bower_components*
+.git*

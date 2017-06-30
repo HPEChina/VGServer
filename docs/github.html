@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Github Upload</title>
+    <script type="text/javascript" src="./GitHub.bundle.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<script type="text/javascript">
+console.log('user=用户名&pass=密码&repo=仓库名称&owner=仓库拥有人&branch=仓库分支&path=路径')
+    var url = location.search; //获取url中"?"符后的字串
+    var params = new Object();
+    if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        var strs = str.split("&");
+        for(var i = 0; i < strs.length; i ++) {
+            params[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+        }
+    }
+    function handleFiles(files)
+	{
+		for (var i = 0; i < files.length; i++)
+		{
+			(function(file)
+			{
+				var reader = new FileReader();
+				reader.onload = function(e)
+				{
+                    var github = new GitHub({
+                        username: params.user,
+                        password: params.pass
+                    });
+                    github.getRepo(params.owner,params.repo).writeFile(
+                        params.branch, 
+                        (params.path?params.path+'/':'')+file.name, 
+                        e.target.result.match(/^data:.*;base64,(.+)$/)[1], 
+                        'api upload '+file.name, 
+                        {encode:false},
+                        function(err,result){console.log(err||result)}
+                    )
+				};
+				reader.onerror = function(e)
+				{
+					console.error(e);
+				};
+				reader.readAsDataURL(file);
+			})(files[i]);
+		}
+	};
+
+	function handleSubmit()
+	{
+			if(params.user&&params.pass&&params.owner&&params.repo&&params.branch)handleFiles(document.querySelector('form').upload.files);
+            else alert('请指定参数：user=用户名&pass=密码&repo=仓库名称&owner=仓库拥有人&branch=仓库分支&path=路径')
+			return false;
+	};
+
+</script>
+
+<body>
+    <form method="POST" enctype="multipart/form-data" action="" name="openForm" onsubmit="return handleSubmit();" accept-charset="UTF-8">
+        <input type="file" name="upload">
+        <input type="submit" value="Upload">
+    </form>
+</body>
+
+</html>

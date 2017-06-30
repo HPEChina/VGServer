@@ -1,0 +1,79 @@
+{
+  "name": "lab2012",
+  "version": "1.0.0",
+  "main": "app.js",
+  "engines": {
+    "node": ">= 7.6.0"
+  },
+  "description": "ModelDesigner",
+  "keywords": [
+    "ModelDesigner",
+    "huawei",
+    "HPE"
+  ],
+  "author": "wangjh <Wangjianhui8@huawei.com> (https://www.dxc.com)",
+  "homepage": "",
+  "dependencies": {
+    "arangojs": "^5.6.1",
+    "axios": "^0.16.2",
+    "htmlparser2": "^3.9.2",
+    "image-size": "^0.5.5",
+    "ioredis": "^3.1.1",
+    "kcors": "^2.2.1",
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-compress": "^2.0.0",
+    "koa-conditional-get": "^2.0.0",
+    "koa-etag": "^3.0.0",
+    "koa-logger": "^3.0.0",
+    "koa-ratelimit": "^4.0.0",
+    "koa-router": "^7.1.1",
+    "koa-static": "^3.0.0",
+    "uuid": "^3.1.0",
+    "xml2js": "^0.4.17"
+  },
+  "scripts": {
+    "start": "node server",
+    "debug": "node --inspect --debug-brk server",
+    "test": "node_modules/.bin/nyc node_modules/.bin/ava",
+    "report": "node_modules/.bin/nyc report --reporter=html",
+    "rust": "node_modules/.bin/neon build",
+    "doc": "node_modules/.bin/documentation readme server.js --section=API"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/canfeit/VGServer.git"
+  },
+  "files": [
+    "lib",
+    "router",
+    ".babelrc",
+    "server.js",
+    "pm2.json"
+  ],
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "codemirror": "^5.26.0",
+    "del": "^2.2.2",
+    "documentation": "^4.0.0-rc.1",
+    "github": "^9.2.0",
+    "github-api": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.4.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-replace": "^0.5.4",
+    "gulp-uglify": "^3.0.0",
+    "gulp.spritesmith": "^6.5.0",
+    "jasmine-core": "^2.6.4",
+    "js-yaml": "^3.8.4",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.1.1",
+    "karma-jasmine": "^1.1.0",
+    "neon-cli": "^0.1.18",
+    "nyc": "^11.0.2",
+    "standard": "^10.0.2",
+    "supertest": "^3.0.0"
+  }
+}

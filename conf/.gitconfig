@@ -1,0 +1,6 @@
+[core]
+	gitproxy = web-proxy.sgp.hpecorp.net:8080
+[http]
+	proxy = web-proxy.sgp.hpecorp.net:8080
+[https]
+	proxy = web-proxy.sgp.hpecorp.net:8080

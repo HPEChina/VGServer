@@ -1,0 +1,10 @@
+{
+  "name": "designer",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.1.1",
+    "nedb": "^1.6.0",
+    "codemirror": "^5.22.2"
+  }
+}

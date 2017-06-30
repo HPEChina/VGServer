@@ -1,0 +1,8 @@
+#!/bin/bash
+# chkconfig: - 85 15
+# description: ArangoDB Server
+#路径:/etc/rc.d/init.d/arango
+#sed -i 's/\r//' /etc/rc.d/init.d/arango
+#chmod +x /etc/rc.d/init.d/arango
+#chkconfig --add arango
+arangod -c /root/arangod.conf

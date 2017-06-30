@@ -1,0 +1,15 @@
+#git(分布式版本控制系统)忽略清单
+node_modules*
+bower_components*
+*.log
+.idea
+.project
+~$*
+.nyc_output
+coverage
+native/target
+native/index.node
+native/artifacts.json
+*~
+.DS_Store
+.vs

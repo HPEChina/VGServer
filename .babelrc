@@ -1,0 +1,11 @@
+//Babel(ES6、react转换器)配置文件
+{
+  //presets：用于组织插件共同完成某项功能
+  "presets": [
+    // "es2017" //es2017：async/await支持,在node7中用node --harmony_async_await启动参数代替
+  ],
+  //插件配置
+  "plugins": [
+    "transform-es2015-modules-commonjs" //node es2015模块支持
+  ]
+}

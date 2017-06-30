@@ -1,0 +1,15 @@
+[package]
+name = "node_rust"
+version = "0.1.0"
+authors = ["wajianhu <canfeit@qq.com>"]
+build = "build.rs"
+
+[lib]
+name = "node_rust"
+crate-type = ["dylib"]
+
+[build-dependencies]
+neon-build = ""
+
+[dependencies]
+neon = ""

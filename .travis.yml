@@ -1,0 +1,4 @@
+#travis ci(持续集成)配置文件
+language: node_js #测试语言
+node_js: #语言版本
+  - "node"
